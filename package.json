@@ -1,8 +1,8 @@
 {
   "name": "projetovireon",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
-  "homepage": "https://mrx-pixeln.github.io/BicicletaReact",
+  "homepage": "https://MrX-Pixeln.github.io/BicicletaReact",
   "type": "module",
   "scripts": {
     "dev": "vite",

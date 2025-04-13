@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./Seguros.css";
 
 const Seguros = () => {
@@ -20,9 +22,9 @@ const Seguros = () => {
             <li>Suporte técnico via telefone e WhatsApp</li>
             <li>Franquia reduzida em casos de sinistro</li>
           </ul>
-          <a href="./orçamento.html" className="botao secundario">
+          <Link to="/seguros" className="botao secundario">
             Contrate
-          </a>
+          </Link>
         </div>
 
         <div className="seguros-item">
@@ -40,9 +42,9 @@ const Seguros = () => {
             <li>Cobertura nacional válida em todo o território brasileiro</li>
             <li>Acompanhamento de processo 100% online</li>
           </ul>
-          <a href="./orçamento.html" className="botao">
+          <Link to="/seguros" className="botao">
             Contrate
-          </a>
+          </Link>
         </div>
       </div>
     </article>
