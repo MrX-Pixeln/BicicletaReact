@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
+import Cart from "./Cart.jsx";
 
 export default function Header() {
   return (
@@ -31,7 +32,8 @@ export default function Header() {
               </linearGradient>
             </defs>
           </svg>
-          <svg className="logo-svg"
+          <svg
+            className="logo-svg"
             width="101"
             height="27"
             viewBox="0 0 101 27"
@@ -81,6 +83,7 @@ export default function Header() {
             </li>
           </ul>
         </nav>
+        <Cart />
       </div>
     </header>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Parceiros.css"; 
+import "./Parceiros.css";
 
 export default function Parceiros() {
   return (
@@ -9,28 +9,28 @@ export default function Parceiros() {
       </h2>
       <ul>
         <li>
-          <img src="img/parceiros/apple-14 1.svg" alt="Apple" />
+          <img src="img/parceiros/caloi-2 1.svg" alt="Caloi" />
         </li>
         <li>
-          <img src="img/parceiros/lacoste-logo-1 1.svg" alt="Lacoste" />
+          <img src="img/parceiros/cannondale-1 1.svg" alt="Cannondale" />
         </li>
         <li>
-          <img src="img/parceiros/pornhub 1.svg" alt="Pornhub" />
+          <img src="img/parceiros/fuji-bicycles 1.svg" alt="Fuji" />
         </li>
         <li>
-          <img src="img/parceiros/walt-disney-records 1.svg" alt="Disney" />
+          <img src="img/parceiros/giant-bicycles 1.svg" alt="Giant" />
         </li>
         <li>
-          <img src="img/parceiros/coca-cola-2021 1.svg" alt="Coca-Cola" />
+          <img src="img/parceiros/thor-2 1.svg" alt="Thor" />
         </li>
         <li>
-          <img src="img/parceiros/tinder-cinza.svg" alt="Tinder" />
+          <img src="img/parceiros/green-giant 2.svg" alt="Green" />
         </li>
         <li>
-          <img src="img/parceiros/onlyfans-wordmark-1 1.svg" alt="OnlyFans" />
+          <img src="img/parceiros/shimano-1- 1.svg" alt="Shimano" />
         </li>
         <li>
-          <img src="img/parceiros/Sejaprivacy 1.svg" alt="SejaPrivacy" />
+          <img src="img/parceiros/huffy-bicycles 1.svg" alt="Huffy" />
         </li>
       </ul>
     </section>

@@ -52,7 +52,7 @@
   display: inline-block;
   width: 13px;
   height: 9px;
-  background: url('../img/icones/lista.svg');
+  background: url('/public/img/icones/lista.svg');
   position: absolute;
   left: -21px;
 

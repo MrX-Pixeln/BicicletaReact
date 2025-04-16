@@ -1,0 +1,149 @@
+/* Container do Carrinho */
+.cart-container {
+  position: relative;
+}
+
+/* Botão do Carrinho */
+.cart-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+}
+
+/* Indicador de Itens */
+.cart-count {
+  background: var(--p1);
+  /* Cor de fundo mais discreta */
+  color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Dropdown do Carrinho - padrão (telas grandes) */
+.cart-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--w);
+  border: 1px solid var(--c2);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  z-index: 100;
+  padding: 16px;
+  margin-top: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Cabeçalho do Carrinho */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.cart-header h3 {
+  margin: 0;
+  color: var(--c11);
+}
+
+.cart-header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--c6);
+}
+
+/* Carrinho Vazio */
+.cart-empty {
+  text-align: center;
+  color: var(--c6);
+  padding: 16px 0;
+}
+
+/* Botão de Checkout */
+.cart-checkout {
+  width: 100%;
+  padding: 12px;
+  background: var(--p1);
+  color: var(--c12);
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 16px;
+}
+
+.cart-checkout:hover {
+  background: var(--p2);
+}
+
+.cart-checkout:disabled {
+  background: var(--c2);
+  cursor: not-allowed;
+}
+
+/* ======================= */
+/*      RESPONSIVIDADE     */
+/* ======================= */
+
+/* Tablet / telas menores */
+@media (max-width: 768px) {
+  .cart-dropdown {
+    width: 280px;
+  }
+
+  .cart-toggle {
+    padding: 10px;
+  }
+
+  .cart-count {
+    width: 24px;
+    height: 24px;
+    font-size: 1rem;
+  }
+
+  .cart-checkout {
+    font-size: 1rem;
+  }
+}
+
+/* Celulares (ajuste principal!) */
+@media (max-width: 480px) {
+  .cart-dropdown {
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    /* remove alinhamento à direita */
+    max-width: 90vw;
+    padding: 12px;
+  }
+
+  .cart-header h3 {
+    font-size: 1rem;
+  }
+
+  .cart-checkout {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .cart-empty {
+    font-size: 0.9rem;
+  }
+}
