@@ -129,7 +129,6 @@
     left: 50%;
     transform: translateX(-50%);
     right: auto;
-    /* remove alinhamento à direita */
     max-width: 90vw;
     padding: 12px;
   }
@@ -145,5 +144,36 @@
 
   .cart-empty {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 672px) {
+  .cart-dropdown {
+    left: 80px;
+  }
+}
+
+@media (max-width: 484px) {
+  .cart-dropdown {
+    left: -250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-dropdown {
+    left: -135px;
+  }
+
+}
+
+@media (max-width: 427px) {
+  .cart-dropdown {
+    left: 200px;
+  }
+}
+
+@media (max-width: 375px) {
+  .cart-dropdown {
+    left: 150px;
   }
 }
