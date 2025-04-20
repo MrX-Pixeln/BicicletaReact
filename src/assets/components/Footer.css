@@ -1,7 +1,7 @@
 .footer-bg {
   background-color: var(--c12);
   color: #FFF;
-  padding: 60px 0 40px; 
+  padding: 60px 0 40px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -83,7 +83,7 @@
 
 .footer-form {
   display: flex;
-  margin: 20px 0; 
+  margin: 20px 0;
 }
 
 .footer-form input {
@@ -144,20 +144,20 @@
 
 @media (max-width: 768px) {
   .footer {
-      grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .footer-noticias {
-      grid-column: span 2;
+    grid-column: span 2;
   }
 }
 
 @media (max-width: 480px) {
   .footer {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
   .footer-noticias {
-      grid-column: span 1;
+    grid-column: span 1;
   }
 }

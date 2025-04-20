@@ -13,6 +13,7 @@ import TermoPrivacidade from "./assets/pages/TermoPrivacidade";
 import TermosDeUso from "./assets/pages/TermosDeUso";
 import TermosDeUsuario from "./assets/pages/TermosDeUsuario";
 import NotFound from "./assets/pages/NotFound";
+import Bicicletas from "../src/assets/pages/Bicicletas.jsx";
 
 export default function App() {
   const location = useLocation();
@@ -38,7 +39,7 @@ export default function App() {
             </>
           }
         />
-        <Route path="/bicicletas" element={<BicicletasListas />} />
+        <Route path="/bicicletas" element={<Bicicletas />} />
         <Route path="/tecnologia" element={<Tecnologia />} />
         <Route path="/depoimentos" element={<Depoimentos />} />
         <Route path="/termo-privacidade" element={<TermoPrivacidade />} />
