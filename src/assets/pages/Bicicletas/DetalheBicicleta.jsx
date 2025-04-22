@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import bicicletas from "../../../data/bicicletas.json";
 import { useCart } from "../../../assets/components/Cart/CartContext.jsx"; // Importe seu contexto
 import "./DetalheBicicleta.css";
+import Comentarios from "../../components/comentarios/Comentarios";
+import Seguro from "../../components/Bicicletas-Seguro/seguro";
 
 function DetalheBicicleta() {
   const { nome } = useParams();
@@ -73,7 +75,6 @@ function DetalheBicicleta() {
           </h1>
         </div>
       </div>
-
       <div className="bicicleta container">
         <div className="bicicleta-imagens">
           <div className="zoom-container">
@@ -157,6 +158,8 @@ function DetalheBicicleta() {
           </ul>
         </div>
       </div>
+      <Comentarios produtoId={bicicleta.id || nome} />
+      <Seguro />
     </main>
   );
 }

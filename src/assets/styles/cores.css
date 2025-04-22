@@ -21,10 +21,6 @@
   --p2: #E4A30B;
   --p1: #FFBB00;
   --p0: #FFBF00
-    /* Paleta Marrom */
-    --m0: #3b2c00;
-
-
 }
 
 
@@ -181,14 +177,4 @@
 
 .bg-p1 {
   background-color: var(--p1);
-}
-
-/* Paleta Marrom */
-.cor-m0 {
-  color: var(--m0);
-}
-
-/* Fundo Marrom */
-.bg-m0 {
-  background-color: var(--m0);
 }
