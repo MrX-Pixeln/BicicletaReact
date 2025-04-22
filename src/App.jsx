@@ -23,6 +23,8 @@ import Seguro from "./assets/pages/Seguros/Seguros";
 // Pagina Bicicletas Individuais
 import DetalheBicicleta from "./assets/pages/Bicicletas/DetalheBicicleta";
 
+//ChatBOT
+import MeuChatBot from "./assets/components/ChatBot/MeuChatBot";
 
 // Cart
 import { CartProvider } from "../src/assets/components/Cart/CartContext.jsx"; // importa o contexto do carrinho
@@ -36,6 +38,7 @@ export default function App() {
 
   return (
     <CartProvider>
+      <MeuChatBot />
       <Routes>
         {/* Todas as rotas com Header e Footer dentro de MainLayout */}
         <Route element={<MainLayout />}>
