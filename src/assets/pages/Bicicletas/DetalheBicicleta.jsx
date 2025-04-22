@@ -65,102 +65,104 @@ function DetalheBicicleta() {
   }
 
   return (
-    <main className="titulo-bg">
-      <div>
-        <div className="titulo container">
-          <p className="font-2-xl cor-c5">{bicicleta.preco}</p>
-          <h1 className="font-1-xxl cor-branco">
-            {bicicleta.nome}
-            <span className="cor-p1">.</span>
-          </h1>
-        </div>
-      </div>
-      <div className="bicicleta container">
-        <div className="bicicleta-imagens">
-          <div className="zoom-container">
-            <img
-              src={`/BicicletaReact/img/${bicicleta.imagens[0]}`}
-              alt="Imagem bicicleta"
-              className="zoom-img"
-            />
-            <div className="zoom-lens"></div>
+    <>
+      <main className="titulo-bg">
+        <div>
+          <div className="titulo container">
+            <p className="font-2-xl cor-c5">{bicicleta.preco}</p>
+            <h1 className="font-1-xxl cor-branco">
+              {bicicleta.nome}
+              <span className="cor-p1">.</span>
+            </h1>
           </div>
-
-          {bicicleta.imagens.slice(1).map((img, index) => (
-            <img
-              key={index}
-              src={`/BicicletaReact/img/${img}`}
-              alt=""
-              className="zoom-img"
-            />
-          ))}
         </div>
-
-        <div className="bicicleta-conteudo">
-          <p className="font-2-l cor-c5">{bicicleta.descricao}</p>
-
-          <div className="bicicleta-comprar">
-            <a className="botao" href="../orcamento.html">
-              Comprar Agora
-            </a>
-
-            {/* Adicionar ao carrinho como <a> para manter estilo */}
-            <a
-              className="botao estoque"
-              role="button"
-              onClick={(e) => {
-                e.preventDefault();
-                handleAddToCart();
-              }}
-            >
-              {added ? "Adicionado ao carrinho!" : "Adicionar ao carrinho"}
-            </a>
-
-            <div className="bicicleta-info">
-              <span className="font-1-xs cor-c6">
-                <img
-                  src="/BicicletaReact/img/icones/entrega.svg"
-                  alt="Entrega"
-                />{" "}
-                {bicicleta.entrega}
-              </span>
-              <span className="font-1-xs cor-c6">
-                <img
-                  src="/BicicletaReact/img/icones/estoque.svg"
-                  alt="Estoque"
-                />{" "}
-                {bicicleta.estoque} em estoque
-              </span>
+        <div className="bicicleta container">
+          <div className="bicicleta-imagens">
+            <div className="zoom-container">
+              <img
+                src={`/BicicletaReact/img/${bicicleta.imagens[0]}`}
+                alt="Imagem bicicleta"
+                className="zoom-img"
+              />
+              <div className="zoom-lens"></div>
             </div>
+
+            {bicicleta.imagens.slice(1).map((img, index) => (
+              <img
+                key={index}
+                src={`/BicicletaReact/img/${img}`}
+                alt=""
+                className="zoom-img"
+              />
+            ))}
           </div>
 
-          <h2 className="font-1-xs cor-0">Informações</h2>
-          <ul className="bicicleta-informacoes">
-            {bicicleta.informacoes.map((info, index) => (
-              <li key={index}>
-                <img
-                  src={`/BicicletaReact/img/icones/${info.icone}`}
-                  alt={info.titulo}
-                />
-                <h3 className="font-1-m cor-branco">{info.titulo}</h3>
-                <p className="font-2-xs cor-c5">{info.descricao}</p>
-              </li>
-            ))}
-          </ul>
+          <div className="bicicleta-conteudo">
+            <p className="font-2-l cor-c5">{bicicleta.descricao}</p>
 
-          <h2 className="font-1-xs cor-branco">Ficha Técnica</h2>
-          <ul className="bicicleta-ficha font-2-s cor-c5">
-            {Object.entries(bicicleta.fichaTecnica).map(([label, valor]) => (
-              <li key={label}>
-                {label} <span>{valor}</span>
-              </li>
-            ))}
-          </ul>
+            <div className="bicicleta-comprar">
+              <a className="botao" href="../orcamento.html">
+                Comprar Agora
+              </a>
+
+              {/* Adicionar ao carrinho como <a> para manter estilo */}
+              <a
+                className="botao estoque"
+                role="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleAddToCart();
+                }}
+              >
+                {added ? "Adicionado ao carrinho!" : "Adicionar ao carrinho"}
+              </a>
+
+              <div className="bicicleta-info">
+                <span className="font-1-xs cor-c6">
+                  <img
+                    src="/BicicletaReact/img/icones/entrega.svg"
+                    alt="Entrega"
+                  />{" "}
+                  {bicicleta.entrega}
+                </span>
+                <span className="font-1-xs cor-c6">
+                  <img
+                    src="/BicicletaReact/img/icones/estoque.svg"
+                    alt="Estoque"
+                  />{" "}
+                  {bicicleta.estoque} em estoque
+                </span>
+              </div>
+            </div>
+
+            <h2 className="font-1-xs cor-0">Informações</h2>
+            <ul className="bicicleta-informacoes">
+              {bicicleta.informacoes.map((info, index) => (
+                <li key={index}>
+                  <img
+                    src={`/BicicletaReact/img/icones/${info.icone}`}
+                    alt={info.titulo}
+                  />
+                  <h3 className="font-1-m cor-branco">{info.titulo}</h3>
+                  <p className="font-2-xs cor-c5">{info.descricao}</p>
+                </li>
+              ))}
+            </ul>
+
+            <h2 className="font-1-xs cor-branco">Ficha Técnica</h2>
+            <ul className="bicicleta-ficha font-2-s cor-c5">
+              {Object.entries(bicicleta.fichaTecnica).map(([label, valor]) => (
+                <li key={label}>
+                  {label} <span>{valor}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
+      </main>
       <Comentarios produtoId={bicicleta.id || nome} />
       <Seguro />
-    </main>
+    </>
   );
 }
 
