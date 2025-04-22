@@ -1,16 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./TabelasSeguros.css";
 
-import "./Seguros.css";
-
-const Seguros = () => {
+const TabelasSeguros = () => {
   return (
-    <article className="seguros-bg">
-      <div className="seguros container">
-        <h2 className="font-1-xxl cor-branco">
-          Planos e Coberturas<span className="cor-p1">.</span>
-        </h2>
+    <main className="seguros-bg">
+      <div className="titulo-bg">
+        <div className="titulo container">
+          <p className="font-2-l-b cor-c5">Escolha seu seguro</p>
+          <h1 className="font-1-xxl cor-branco">
+            Proteção rápida, do seu jeito<span className="cor-p1">.</span>
+          </h1>
+        </div>
+      </div>
 
+      <div className="seguros container">
         <div className="seguros-item">
           <h3 className="font-1-xl cor-c6">PRATA</h3>
           <span className="font-1-xl cor-branco">
@@ -22,7 +26,7 @@ const Seguros = () => {
             <li>Suporte técnico via telefone e WhatsApp</li>
             <li>Franquia reduzida em casos de sinistro</li>
           </ul>
-          <Link to="/seguros" className="botao secundario">
+          <Link to="/orcamento" className="botao secundario">
             Contrate
           </Link>
         </div>
@@ -42,13 +46,13 @@ const Seguros = () => {
             <li>Cobertura nacional válida em todo o território brasileiro</li>
             <li>Acompanhamento de processo 100% online</li>
           </ul>
-          <Link to="/seguros" className="botao">
+          <Link to="/orcamento" className="botao">
             Contrate
           </Link>
         </div>
       </div>
-    </article>
+    </main>
   );
 };
 
-export default Seguros;
+export default TabelasSeguros;

@@ -1,19 +1,31 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import MainLayout from "./assets/components/MainLayout";
 
-import Introducao from "./assets/components/Introducao";
-import BicicletasListas from "./assets/components/BicicletasListas";
-import Tecnologia from "./assets/components/Tecnologia";
-import Parceiros from "./assets/components/Parceiros";
-import Depoimentos from "./assets/components/Depoimentos";
-import Seguros from "./assets/components/Seguros";
+// Header junto com o Footer
+import MainLayout from "./assets/components/Layout/MainLayout";
 
-import TermoPrivacidade from "./assets/pages/TermoPrivacidade";
-import TermosDeUso from "./assets/pages/TermosDeUso";
-import TermosDeUsuario from "./assets/pages/TermosDeUsuario";
-import NotFound from "./assets/pages/NotFound";
-import Bicicletas from "../src/assets/pages/Bicicletas.jsx";
+// Componentes reutilizáveis
+import Introducao from "./assets/components/Introdução/Introducao";
+import BicicletasListas from "./assets/components/BicicletasListas/BicicletasListas";
+import Tecnologia from "./assets/components/Tecnologia/Tecnologia";
+import Parceiros from "./assets/components/Parceiros/Parceiros";
+import Depoimentos from "./assets/components/Depoimentos/Depoimentos";
+import TabelasSegurosHome from "./assets/components/Seguros/TabelasSegurosHome";
+
+// Páginas principais
+import TermoPrivacidade from "./assets/pages/Termos/TermoPrivacidade";
+import TermosDeUso from "./assets/pages/Termos/TermosDeUso";
+import TermosDeUsuario from "./assets/pages/Termos/TermosDeUsuario";
+import NotFound from "./assets/pages/NotFound/NotFound";
+import Bicicletas from "./assets/pages/Bicicletas/Bicicletas";
+import Seguro from "./assets/pages/Seguros/Seguros";
+
+// Pagina Bicicletas Individuais
+import DetalheBicicleta from "./assets/pages/Bicicletas/DetalheBicicleta";
+
+
+// Cart
+import { CartProvider } from "../src/assets/components/Cart/CartContext.jsx"; // importa o contexto do carrinho
 
 export default function App() {
   const location = useLocation();
@@ -23,32 +35,36 @@ export default function App() {
   }, [location]);
 
   return (
-    <Routes>
-      {/* Todas as rotas com Header e Footer dentro de MainLayout */}
-      <Route element={<MainLayout />}>
-        <Route
-          path="/"
-          element={
-            <>
-              <Introducao />
-              <BicicletasListas />
-              <Tecnologia />
-              <Parceiros />
-              <Depoimentos />
-              <Seguros />
-            </>
-          }
-        />
-        <Route path="/bicicletas" element={<Bicicletas />} />
-        <Route path="/tecnologia" element={<Tecnologia />} />
-        <Route path="/depoimentos" element={<Depoimentos />} />
-        <Route path="/termo-privacidade" element={<TermoPrivacidade />} />
-        <Route path="/termos-uso" element={<TermosDeUso />} />
-        <Route path="/termos-usuario" element={<TermosDeUsuario />} />
-      </Route>
+    <CartProvider>
+      <Routes>
+        {/* Todas as rotas com Header e Footer dentro de MainLayout */}
+        <Route element={<MainLayout />}>
+          <Route
+            path="/"
+            element={
+              <>
+                <Introducao />
+                <BicicletasListas />
+                <Tecnologia />
+                <Parceiros />
+                <Depoimentos />
+                <TabelasSegurosHome />
+              </>
+            }
+          />
+          <Route path="/bicicletas" element={<Bicicletas />} />
+          <Route path="/tecnologia" element={<Tecnologia />} />
+          <Route path="/depoimentos" element={<Depoimentos />} />
+          <Route path="/termo-privacidade" element={<TermoPrivacidade />} />
+          <Route path="/termos-uso" element={<TermosDeUso />} />
+          <Route path="/termos-usuario" element={<TermosDeUsuario />} />
+          <Route path="/seguro" element={<Seguro />} />
+          <Route path="/bicicletas/:nome" element={<DetalheBicicleta />} />
+        </Route>
 
-      {/* Página 404 isolada, sem header/footer */}
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        {/* Página 404 isolada, sem header/footer */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </CartProvider>
   );
 }

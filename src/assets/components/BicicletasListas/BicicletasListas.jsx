@@ -10,7 +10,7 @@ export default function BicicletasLista() {
       </h2>
       <ul className="bicicletas-lista-items">
         <li>
-          <Link to="/bicicletas/element">
+          <Link to="/bicicletas/vireon-element">
             <img
               src="img/bicicletas-home/element-home-resized.jpg"
               alt="Bicicleta moderna element"
@@ -20,7 +20,7 @@ export default function BicicletasLista() {
           </Link>
         </li>
         <li>
-          <Link to="/bicicletas/ignite">
+          <Link to="/bicicletas/vireon-ignite">
             <img
               src="img/bicicletas-home/ignite-home-resized.jpg"
               alt="Bicicleta moderna ignite"
@@ -30,7 +30,7 @@ export default function BicicletasLista() {
           </Link>
         </li>
         <li>
-          <Link to="/bicicletas/nebula">
+          <Link to="/bicicletas/vireon-nebula">
             <img
               src="img/bicicletas-home/nebula-home.jpg"
               alt="Bicicleta moderna nebula"

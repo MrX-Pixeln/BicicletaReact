@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import produtos from "../../data/produtos.json";
+import produtos from "../../../data/produtos.json";
 import "./Bicicletas.css";
+import { Link } from "react-router-dom";
 
 function Bicicletas() {
   const [bicicletas, setBicicletas] = useState([]);
@@ -57,9 +58,14 @@ function Bicicletas() {
                   </li>
                 ))}
               </ul>
-              <a className="botao seta" href="">
+              <Link
+                className="botao seta"
+                to={`/bicicletas/${bike.nome
+                  .toLowerCase()
+                  .replace(/\s+/g, "-")}`}
+              >
                 Veja Mais
-              </a>
+              </Link>
             </div>
           </div>
         </div>
