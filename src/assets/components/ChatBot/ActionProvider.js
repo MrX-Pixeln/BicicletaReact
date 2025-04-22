@@ -4,30 +4,9 @@ class ActionProvider {
     this.setState = setStateFunc;
   }
 
-  handleSuporte = () => {
+  handleDefault = (userMessage) => {
     const message = this.createChatBotMessage(
-      "Claro! Vamos falar sobre suporte técnico."
-    );
-    this.addMessageToState(message);
-  };
-
-  handleEscolhaBike = () => {
-    const message = this.createChatBotMessage(
-      "Legal! Vamos te ajudar a escolher uma bike."
-    );
-    this.addMessageToState(message);
-  };
-
-  handleAcompanharPedido = () => {
-    const message = this.createChatBotMessage(
-      "Vamos verificar o status do seu pedido."
-    );
-    this.addMessageToState(message);
-  };
-
-  handleFalarComAtendente = () => {
-    const message = this.createChatBotMessage(
-      "Encaminhando você para um atendente..."
+      `Ainda não sei como responder a: "${userMessage}", mas em breve estarei mais esperto!`
     );
     this.addMessageToState(message);
   };

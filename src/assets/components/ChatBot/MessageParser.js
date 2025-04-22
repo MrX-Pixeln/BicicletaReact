@@ -1,11 +1,19 @@
+// MessageParser.js
 class MessageParser {
   constructor(actionProvider) {
     this.actionProvider = actionProvider;
   }
 
   parse(message) {
-    const trimmed = message.toLowerCase().trim();
-    this.actionProvider.defaultResponse(trimmed);
+    const lowercase = message.toLowerCase();
+
+    if (lowercase.includes("seguro")) {
+      this.actionProvider.handleSeguro();
+    } else if (lowercase.includes("bicicleta")) {
+      this.actionProvider.handleBicicleta();
+    } else {
+      this.actionProvider.handleDefault(message);
+    }
   }
 }
 
