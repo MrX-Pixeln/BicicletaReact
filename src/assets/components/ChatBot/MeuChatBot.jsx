@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Chatbot from "react-chatbot-kit";
 import "react-chatbot-kit/build/main.css";
-import chatbotConfig from "./chatbotConfig"; 
+import chatbotConfig from "./chatbotConfig";
 import MessageParser from "./MessageParser";
 import ActionProvider from "./ActionProvider";
 
@@ -34,12 +34,12 @@ const MeuChatBot = () => {
         }}
       >
         <img
-          src="/BicicletaReact/img/MascoteVireon2.png" 
+          src="/BicicletaReact/img/MascoteVireon2.png"
           alt="ChatBot"
           style={{
-            width: "100%", 
+            width: "100%",
             height: "100%",
-            borderRadius: "50%", 
+            borderRadius: "50%",
             objectFit: "cover",
           }}
         />
@@ -57,7 +57,7 @@ const MeuChatBot = () => {
             boxShadow: "0 0 20px rgba(0,0,0,0.2)",
             borderRadius: "10px",
             overflow: "hidden",
-            backgroundColor: "#fff", 
+            backgroundColor: "#fff",
           }}
         >
           <Chatbot
