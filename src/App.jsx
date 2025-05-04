@@ -29,6 +29,9 @@ import MeuChatBot from "./assets/components/ChatBot/MeuChatBot";
 // Cart
 import { CartProvider } from "../src/assets/components/Cart/CartContext.jsx"; // importa o contexto do carrinho
 
+// Contato
+import Contato from "./assets/pages/Contato/contato.jsx";
+
 export default function App() {
   const location = useLocation();
 
@@ -62,6 +65,7 @@ export default function App() {
           <Route path="/termos-uso" element={<TermosDeUso />} />
           <Route path="/termos-usuario" element={<TermosDeUsuario />} />
           <Route path="/seguro" element={<Seguro />} />
+          <Route path="/contato" element={<Contato />} />
           <Route path="/bicicletas/:nome" element={<DetalheBicicleta />} />
         </Route>
 
