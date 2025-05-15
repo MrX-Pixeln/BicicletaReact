@@ -32,6 +32,9 @@ import { CartProvider } from "../src/assets/components/Cart/CartContext.jsx"; //
 // Contato
 import Contato from "./assets/pages/Contato/contato.jsx";
 
+// Orçamento
+import Orçamento from "./assets/pages/Orçamento/orcamento.jsx";
+
 export default function App() {
   const location = useLocation();
 
@@ -67,6 +70,7 @@ export default function App() {
           <Route path="/seguro" element={<Seguro />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/bicicletas/:nome" element={<DetalheBicicleta />} />
+          <Route path="/orcamento" element={<Orçamento />} />
         </Route>
 
         {/* Página 404 isolada, sem header/footer */}

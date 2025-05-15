@@ -5,6 +5,7 @@ import { useCart } from "../../../assets/components/Cart/CartContext.jsx"; // Im
 import "./DetalheBicicleta.css";
 import Comentarios from "../../components/comentarios/Comentarios";
 import Seguro from "../../components/Bicicletas-Seguro/seguro";
+import { Link } from "react-router-dom";
 
 function DetalheBicicleta() {
   const { nome } = useParams();
@@ -101,9 +102,9 @@ function DetalheBicicleta() {
             <p className="font-2-l cor-c5">{bicicleta.descricao}</p>
 
             <div className="bicicleta-comprar">
-              <a className="botao" href="../orcamento.html">
+              <Link className="botao" to="/orcamento">
                 Comprar Agora
-              </a>
+              </Link>
 
               {/* Adicionar ao carrinho como <a> para manter estilo */}
               <a

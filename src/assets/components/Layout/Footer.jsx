@@ -16,16 +16,32 @@ const Footer = () => {
           </p>
 
           <div className="icones">
-            <a href="#" aria-label="Facebook">
+            <a
+              href="https://www.facebook.com/?locale=pt_BR"
+              aria-label="Facebook"
+              target="_blank"
+            >
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="#" aria-label="Twitter">
+            <a
+              href="https://x.com/?lang=pt"
+              aria-label="Twitter"
+              target="_blank"
+            >
               <i className="fab fa-twitter"></i>
             </a>
-            <a href="#" aria-label="Instagram">
+            <a
+              href="https://www.instagram.com/"
+              aria-label="Instagram"
+              target="_blank"
+            >
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="#" aria-label="LinkedIn">
+            <a
+                href="https://br.linkedin.com/"
+              aria-label="LinkedIn"
+              target="_blank"
+            >
               <i className="fab fa-linkedin-in"></i>
             </a>
           </div>
@@ -39,10 +55,10 @@ const Footer = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="">Seguros</Link>
+              <Link to="Seguro">Seguros</Link>
             </li>
             <li>
-              <Link to="">Contato</Link>
+              <Link to="Contato">Contato</Link>
             </li>
           </ul>
         </div>

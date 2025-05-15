@@ -1,15 +1,44 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./contato.css";
 import "./lojas.css";
 
 const Contato = () => {
+  const [formData, setFormData] = useState({
+    nome: "",
+    telefone: "",
+    email: "",
+    mensagem: "",
+  });
+
+  const [mensagemEnviada, setMensagemEnviada] = useState(false);
+
   useEffect(() => {
     document.body.id = "contato-body";
-
     return () => {
       document.body.id = "";
     };
   }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    setMensagemEnviada(true);
+    setFormData({
+      nome: "",
+      telefone: "",
+      email: "",
+      mensagem: "",
+    });
+
+    setTimeout(() => {
+      setMensagemEnviada(false);
+    }, 4000);
+  };
 
   return (
     <>
@@ -54,7 +83,10 @@ const Contato = () => {
             </div>
           </section>
           <section className="contato-formulario" aria-label="Formulário">
-            <form className="form" action="./">
+            {mensagemEnviada && (
+              <p className="mensagem-sucesso">Mensagem enviada com sucesso!</p>
+            )}
+            <form className="form" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="nome">Nome</label>
                 <input
@@ -62,6 +94,8 @@ const Contato = () => {
                   id="nome"
                   name="nome"
                   placeholder="Escreva seu nome"
+                  value={formData.nome}
+                  onChange={handleChange}
                 />
               </div>
               <div>
@@ -71,6 +105,8 @@ const Contato = () => {
                   id="telefone"
                   name="telefone"
                   placeholder="(51) 91234-5678"
+                  value={formData.telefone}
+                  onChange={handleChange}
                 />
               </div>
               <div className="col-2">
@@ -80,13 +116,23 @@ const Contato = () => {
                   id="email"
                   name="email"
                   placeholder="contato@gmail.com"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
               <div className="col-2">
                 <label htmlFor="mensagem">Mensagem</label>
-                <textarea rows={5} name="mensagem" id="mensagem"></textarea>
+                <textarea
+                  rows={5}
+                  name="mensagem"
+                  id="mensagem"
+                  value={formData.mensagem}
+                  onChange={handleChange}
+                ></textarea>
               </div>
-              <button className="botao col-2">Enviar Mensagem</button>
+              <button className="botao col-2" type="submit">
+                Enviar Mensagem
+              </button>
             </form>
           </section>
         </div>
@@ -96,7 +142,6 @@ const Contato = () => {
           lojas locais<span className="cor-p1">.</span>
         </h2>
 
-        {/* Loja Recife - 1 */}
         <div className="lojas-item">
           <img
             src="/BicicletaReact/img/lojas/recife.jpg"
@@ -122,7 +167,6 @@ const Contato = () => {
           </div>
         </div>
 
-        {/* Loja Recife - 2 */}
         <div className="lojas-item">
           <img
             src="/BicicletaReact/img/lojas/recife-2.jpg"
