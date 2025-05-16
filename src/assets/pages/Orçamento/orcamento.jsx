@@ -18,11 +18,88 @@ export default function Orcamento() {
     setBicicletas(bicicletasData.bicicletas);
   }, []);
 
+  useEffect(() => {
+    const cep = formData.cep?.replace(/\D/g, "");
+
+    if (!cep || cep.length < 8) {
+      setFormData((prev) => ({
+        ...prev,
+        logradouro: "",
+        bairro: "",
+        cidade: "",
+        estado: "",
+      }));
+      return;
+    }
+
+    const buscarEndereco = async () => {
+      try {
+        const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+        const data = await response.json();
+
+        if (data.erro) {
+          console.warn("CEP não encontrado.");
+          return;
+        }
+
+        setFormData((prev) => ({
+          ...prev,
+          logradouro: data.logradouro,
+          bairro: data.bairro,
+          cidade: data.localidade,
+          estado: data.uf,
+        }));
+      } catch (error) {
+        console.error("Erro ao buscar o CEP:", error);
+      }
+    };
+
+    buscarEndereco();
+  }, [formData.cep]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    let novoValor = value;
+
+    if (name === "cep") {
+      const somenteNumeros = value.replace(/\D/g, "");
+      if (somenteNumeros.length <= 5) {
+        novoValor = somenteNumeros;
+      } else {
+        novoValor =
+          somenteNumeros.slice(0, 5) + "-" + somenteNumeros.slice(5, 8);
+      }
+    }
+
+    if (name === "cpf") {
+      const somenteNumeros = value.replace(/\D/g, "").slice(0, 11);
+      if (somenteNumeros.length <= 3) {
+        novoValor = somenteNumeros;
+      } else if (somenteNumeros.length <= 6) {
+        novoValor = somenteNumeros.slice(0, 3) + "." + somenteNumeros.slice(3);
+      } else if (somenteNumeros.length <= 9) {
+        novoValor =
+          somenteNumeros.slice(0, 3) +
+          "." +
+          somenteNumeros.slice(3, 6) +
+          "." +
+          somenteNumeros.slice(6);
+      } else {
+        novoValor =
+          somenteNumeros.slice(0, 3) +
+          "." +
+          somenteNumeros.slice(3, 6) +
+          "." +
+          somenteNumeros.slice(6, 9) +
+          "-" +
+          somenteNumeros.slice(9);
+      }
+    }
+
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: novoValor,
     }));
   };
 
@@ -30,7 +107,7 @@ export default function Orcamento() {
     e.preventDefault();
     console.log("Dados enviados:", formData);
     setMensagemEnviada(true);
-    setFormData({}); 
+    setFormData({});
 
     setTimeout(() => {
       setMensagemEnviada(false);
@@ -50,7 +127,9 @@ export default function Orcamento() {
 
       <form className="orcamento container" onSubmit={handleSubmit}>
         {mensagemEnviada && (
-          <p className="mensagem-sucesso-orcamento">Orçamento enviado com sucesso!</p>
+          <p className="mensagem-sucesso-orcamento">
+            Orçamento enviado com sucesso!
+          </p>
         )}
         <div className="orcamento-produto">
           <h2 className="font-1-xs cor-c5">Bicicleta ou Seguro?</h2>
